@@ -1,0 +1,78 @@
+html {
+    background-color:  rgb(255, 234, 177);
+}
+
+.textbody {
+    background-color: white;
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+}    
+.carousel {
+    overflow: hidden;
+}
+
+.carousel-item {
+    max-height: 500px;
+}
+
+.carousel-caption {
+    position: absolute;
+    z-index: 1;
+    display:table;
+    width: 40%;
+    height: 120px;
+    background-color: #E9AA00;
+    border-radius: 15px 50px;
+}
+
+.carousel-caption div {
+    display:table-cell;
+    vertical-align: middle;
+    text-align:center;
+}
+
+.trick-positionleft {
+    position: fixed;
+    top: 80%; // 50% for perfect centering
+    left: 50%;
+    transform: translate(-10%, -50%);
+}
+
+.trick-positionright {
+    position: fixed;
+    top: 80%; // 50% for perfect centering
+    left: 50%;
+    transform: translate(90%, -50%);
+}
+
+.carousel-caption-text {
+    font-size: 40px;
+    font-weight: 100;
+    color: white;
+}
+
+.navbar {
+    background-color: #E9AA00;
+    border-bottom: solid 5px rgb(255, 234, 177);
+}
+
+a {
+    color: white !important;
+}
+
+.navbar-brand {
+    margin-right: 50px !important;
+}
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-icon {
+    margin-top: -7px;
+    margin-left: 5px;
+}
+
+.background {
+    background-color: rgb(255, 234, 177);
+}
