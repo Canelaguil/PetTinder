@@ -92,8 +92,17 @@ p {
     border-bottom: solid 5px rgb(255, 234, 177);
 }
 
-a {
+.findme {
+    color: #FFE4B2 !important;
+}
+
+.navie {
     color: white !important;
+}
+
+.activenav {
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .navbar-brand {
