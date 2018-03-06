@@ -13,11 +13,19 @@ $(document).ready(function(){
     $.ajax({
       dataType: "json",
       url: fullURL,
-      success:(function(data){
-        var prettyData = JSON.stringify(data, null,'\t');
+      success: (function (prettyData) {
+        console.log(prettyData);
+        console.log(typeof prettyData);
+        var prettyData = JSON.stringify(prettyData, null,'\t');
         $("#results").text(prettyData);
-
+        console.log("Hey");
+        console.log(prettyData.petfinder.pet.options.option);
+        console.log(prettyData.petfinder.pet.media.photos.photo);
+        console.log(prettyData.petfinder.pet.media.photos.photo[0].$t);
+        var imageUrl = prettyData.petfinder.pet.media.photos.photo[0].$t;
+        console.log(imageUrl);
       })
+
     });
 
   });
