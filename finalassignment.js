@@ -1,31 +1,18 @@
-$(function () {
-   /* $("#checkbtn").on("click", () => {
-        $.ajax({
-            url: "http://api.petfinder.com/breed.list?key=054067075ca765d408c60164f40b5e1a&animal=barnyard"
-        }).done(data => {
-            console.log("Done!");
-            console.log(data);
-        });
-    }); */
-
-
+$(document).ready(function () {
     $("#checkbtn").on("click", () => {
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "http://api.petfinder.com/breed.list?key=054067075ca765d408c60164f40b5e1a&animal=barnyard",
-            "method": "GET",
-            "headers": {
-                "Authorization": "Bearer 344ee8027c092c6b354a624cf7f07aa4",
-                "Cache-Control": "no-cache",
-                "Postman-Token": "5d7a4ac6-eae2-4bb9-aa59-60772676d309"
-            }
+        var checkbnr = document.querySelectorAll('input[type="checkbox"]:checked').length;
+        console.log(checkbnr);
+        if (checkbnr === 10) {
+            alert("You are definitely ready to get a dog!");
+        } else if (checkbnr > 6 && checkbnr < 10) {
+            alert("Maybe have another look at the points you missed. Almost there!");
+        } else {
+            alert("You're not ready yet! Maybe consider another breed or animal!");
         }
-
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-        });
     });
-    $("#checkbtn").on("click", () => {
+
+
+
 
 });
+  
