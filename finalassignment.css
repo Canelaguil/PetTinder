@@ -1,17 +1,22 @@
 html {
-    background-color:  rgb(255, 234, 177);
+    background-color:  white;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Mina|Roboto+Condensed:300i,400,700');
+@import url('https://fonts.googleapis.com/css?family=Karma|Roboto:300');
 
 .textbody {
-    background-color: white;
+    background-color: rgb(0, 52, 102);
     padding: 20px;
-    
+    color: white;    
 }
 
 .contentbox {
-    margin-bottom: 10px;
+    margin-top: 40px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.topbox {
+    border-bottom: solid 20px #E9AA00;
 }
 
 .imageframe {
@@ -28,38 +33,40 @@ html {
 
 #checkbtn {
     margin-right: 0 !important;
+    height: 35px !important;
     position: absolute;
     bottom: 6px;
     right: 6px;
 }
 h1 {
-    font-family: 'Mina', sans-serif !important;
+    font-family: 'Karma', sans-serif !important;
     font-size: 4rem !important;
 }
 
 h2 {
-    font-family: 'Roboto Condensed', sans-serif !important;
+    font-family: 'Roboto', sans-serif !important;
     font-size: 2.3em !important;
     font-weight: 300;
 }
 
 h3 {
-    font-family: 'Mina', sans-serif !important;
+    font-family: 'Karma', sans-serif !important;
     font-size: 1.8rem !important;
 }
 
 h4 {
-    font-family: 'Roboto Condensed', sans-serif !important;
+    font-family: 'Roboto', sans-serif !important;
     font-weight: 700;
     font-size: 1.4rem;
 }
 
 p {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
 .carousel {
     overflow: hidden;
+    border-bottom: solid 10px  rgb(0, 52, 102);
 }
 
 .carousel-item {
@@ -69,11 +76,9 @@ p {
 .carousel-caption {
     position: absolute;
     z-index: 1;
-    display:table;
-    width: 40%;
-    height: 120px;
-    background-color: #E9AA00;
-    border-radius: 15px 50px;
+    display: table;
+    width: 100%;
+    height: 150px;
 }
 
 .carousel-caption div {
@@ -86,46 +91,56 @@ p {
     margin: 0 auto; 
     position: relative;
 }
-.trick-positionleft {
+.centerposition {
     position: fixed;
-    top: 80%; // 50% for perfect centering
+    top: 50%; // 50% for perfect centering
     left: 50%;
-    transform: translate(-10%, -50%);
-}
-
-.trick-positionright {
-    position: fixed;
-    top: 80%; // 50% for perfect centering
-    left: 50%;
-    transform: translate(90%, -50%);
+    transform: translate(-15%, -50%);
 }
 
 .carousel-caption-text {
-    font-size: 40px;
+    font-size: 3rem;
+    font-family: 'Karma', sans-serif !important;
     font-weight: 100;
     color: white;
+    text-shadow: 1px 1px 0px rgb(0, 52, 102)
+}
+
+.btn {
+    background-color: rgb(0, 52, 102) !important;
+    width: 150px;
+    height: 50px;
+    border: transparent !important;
+    color: white !important;
+    font-family: 'Mina', sans-serif !important;
+}
+
+.btn:hover {
+    background-color: #E9AA00 !important;
 }
 
 .navbar {
     background-color: #E9AA00;
-    border-bottom: solid 5px rgb(255, 234, 177);
+    border-bottom: solid 2px rgb(0, 52, 102);
+    text-decoration: none;
 }
 
 .findme {
     color: #FFE4B2 !important;
 }
 
-.navie {
+.activenav {
+    text-decoration: none !important;
+    font-weight: bold;
+    color: rgb(0, 52, 102) !important;
+}
+
+a {
+    text-decoration: none !important;
     color: white !important;
 }
-
-.activenav {
-    text-decoration: underline;
-    font-weight: bold;
-}
-
 a:hover {
-    text-decoration: underline;
+    text-decoration: none !important;
 }
 
 .navbar-brand {
@@ -133,15 +148,12 @@ a:hover {
 }
 .nav-item {
     margin-left: 20px;
+    color: white !important;
 }
 
 .nav-icon {
     margin-top: -7px;
     margin-left: 5px;
-}
-
-.background {
-    background-color: rgb(255, 234, 177);
 }
 
 .boxleft {
@@ -150,8 +162,9 @@ a:hover {
     padding: 50px;
     margin: 40px auto;
     background-color: #E9AA00;
-    border-radius: 15px 50px;
+    border-radius: 20px 20px 0px 0px ;
     color: white;
+    border-bottom: solid 20px rgb(0, 52, 102);
 }
 
 .boxright {
@@ -161,17 +174,19 @@ a:hover {
     padding: 50px;
     margin: 40px auto;
     background-color: #E9AA00;
-    border-radius: 50px 15px;
+    border-radius: 20px 20px 0px 0px ;
     color: white;
+    border-bottom: solid 20px rgb(0, 52, 102);
 }
 
 .footer {
     width: 100%;
-    height: 100px;
+    height: 150px;
     background-color: #e9aa00;
     color: white;
     text-align: center;
     padding: 40px;
+    margin-top: 40px;
 }
 
 /* CHECK BOX CSS*/
@@ -183,7 +198,7 @@ a:hover {
     padding-left: 35px;
     margin-bottom: 3px;
     cursor: pointer;
-    font-family: 'Roboto Condensed', sans-serif !important;
+    font-family: 'Roboto', sans-serif !important;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
