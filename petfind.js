@@ -120,44 +120,22 @@ $(document).ready(function () {
         return (!str || 0 === str.length);
     }
 
-    
-
     $("#favoriteani").on("click", () => {
-        console.log(favName);
-        console.log(favSex);
-        console.log(favAge);
-        console.log(favSize);
-        console.log(favBreed);
-        console.log(document.getElementById("myTable").rows[1].cells[0].innerHTML);
-
-        if (isEmpty(document.getElementById("myTable").rows[1].cells[0].innerHTML)) {
-            document.getElementById("myTable").rows[1].cells[0].innerHTML = favName;
-            document.getElementById("myTable").rows[1].cells[1].innerHTML = favSex;
-            document.getElementById("myTable").rows[1].cells[2].innerHTML = favAge;
-            document.getElementById("myTable").rows[1].cells[3].innerHTML = favSize;
-            document.getElementById("myTable").rows[1].cells[4].innerHTML = favBreed;
-            return;
-        } else if (isEmpty(document.getElementById("myTable").rows[2].cells[0].innerHTML)) {
-            document.getElementById("myTable").rows[2].cells[0].innerHTML = favName;
-            document.getElementById("myTable").rows[2].cells[1].innerHTML = favSex;
-            document.getElementById("myTable").rows[2].cells[2].innerHTML = favAge;
-            document.getElementById("myTable").rows[2].cells[3].innerHTML = favSize;
-            document.getElementById("myTable").rows[2].cells[4].innerHTML = favBreed;
-            return;
-        } else if (isEmpty(document.getElementById("myTable").rows[2].cells[0].innerHTML)) {
-            document.getElementById("myTable").rows[2].cells[0].innerHTML = favName;
-            document.getElementById("myTable").rows[2].cells[1].innerHTML = favSex;
-            document.getElementById("myTable").rows[2].cells[2].innerHTML = favAge;
-            document.getElementById("myTable").rows[2].cells[3].innerHTML = favSize;
-            document.getElementById("myTable").rows[2].cells[4].innerHTML = favBreed;
-            return;
-        } else {
-            alert("Remove an animal before adding new one!")
+        var index;
+        for (index = 1; index < 4; index++) {
+            if (isEmpty(document.getElementById("myTable").rows[index].cells[0].innerHTML)) {
+                document.getElementById("myTable").rows[index].cells[0].innerHTML = favName;
+                document.getElementById("myTable").rows[index].cells[1].innerHTML = favSex;
+                document.getElementById("myTable").rows[index].cells[2].innerHTML = favAge;
+                document.getElementById("myTable").rows[index].cells[3].innerHTML = favSize;
+                document.getElementById("myTable").rows[index].cells[4].innerHTML = favBreed;
+                return;
+            }
+            if (index == 3) {
+                alert("Remove an animal before adding new one!");
+            }
         }
+
     })
-
-    
-    
-
 
 });
