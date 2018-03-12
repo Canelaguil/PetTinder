@@ -1,11 +1,13 @@
-$(function () {
+$(document).ready(function () {
 
     var apiKey = '8788a1328e6d39c137797752065c325c';
-    console.log("grsgsg");
+
     var favName;
     var favSex;
+    var favAge;
+    var favSize;
     var favBreed;
-    var fav
+ 
     $("#newanimal").on("click", () => {
         var url = 'http://api.petfinder.com/pet.getRandom';
         var petkind = 'cat';
@@ -29,9 +31,15 @@ $(function () {
                 console.log(response);
 
                 var petName = response.petfinder.pet.name.$t;
-                console.log(petName);
+                favName = petName;
 
-                var img = response.petfinder.pet.media.photos.photo[2].$t;
+                var img;
+                if (response.petfinder.pet.media.photos.photo[2].$t) {
+                    img = response.petfinder.pet.media.photos.photo[2].$t;
+                } else {
+                    img = "icon.ico.ico";
+                }
+                var petpic = "url(" + img + ")";
 
                 var size = response.petfinder.pet.size.$t;
                 switch (size) {
@@ -48,8 +56,9 @@ $(function () {
                         size = "Extra Large";
                         break;
                     default:
-                        size = size;
+                        size = "Undefined";
                 }
+                favSize = size;
 
                 var sex = response.petfinder.pet.sex.$t;
                 switch (sex) {
@@ -60,10 +69,19 @@ $(function () {
                         sex = "Male";
                         break;
                     default:
-                        sex = sex;
+                        sex = "Undefined";
                 }
+                favSex = sex;
 
-                var age = response.petfinder.pet.age.$t;
+                var age;
+                if (response.petfinder.pet.age.$t) {
+                    age = response.petfinder.pet.age.$t;
+                } else {
+                    age = "Not specified";
+                }
+                favAge = age;
+            
+
                 var breed;
                 /*Checks if empty */
                 if (response.petfinder.pet.breeds.breed.$t) {
@@ -71,9 +89,12 @@ $(function () {
                 } else {
                     breed = "Not specified";
                 }
+                favBreed = breed;
 
-                var locationName = document.getElementById("petname");
+
+                /*  var locationName = document.getElementById('petname');
                 locationName.textContent = petName;
+
 
                 var locationSex = document.getElementById('g1');
                 locationSex.textContent = sex;
@@ -85,17 +106,11 @@ $(function () {
                 locationSize.textContent = size;
 
                 var locationBreed = document.getElementById('b1');
-                locationBreed.textContent = breed;
+                locationBreed.textContent = breed; */
 
 
-                var petpic = "url(" + img + ")";
                 document.getElementById('petpic').style.backgroundImage = petpic;
-                locationName2.appendChild(petName);
-                locationName.appendChild(petName);
-                locationSex.appendChild(sex);
-                locationAge.appendChild(age);
-                locationSize.appendChild(size);
-                locationBreed.appendChild(breed);
+                document.getElementById('insert_name').innerHTML = petName;
 
 
             }
@@ -106,4 +121,12 @@ $(function () {
 
 
     })
-})
+    $("#favoriteani").on("click", () => {
+        console.log(favName);
+        console.log(favSex);
+        console.log(favAge);
+        console.log(favSize);
+        console.log(favBreed);
+ 
+    })
+});
