@@ -7,21 +7,22 @@ $(document).ready(function () {
     var favAge;
     var favSize;
     var favBreed;
-    var petkind;
 
     function getPetKind() {
-        if ($("#box1 option:selected").text() === "Cats") {
-            petkind = 'cat';
-        } else if ($("#box1 option:selected").text() === "Dogs") {
-            petkind = "dog";
+        var selected = $('#box1').find(":selected").text();
+        console.log(selected);
+        if (selected === "Cats") {
+            return 'cat';
+        } else if (selected === "Dogs") {
+            return 'dog';
         } else {
-            petkind = 'cat';
+            return 'cat';
         }
     }
  
     $("#newanimal").on("click", () => {
         var url = 'http://api.petfinder.com/pet.getRandom';
-        getPetKind();
+        var petkind = getPetKind();
         $.ajax({
             url: url,
             jsonp: "callback",

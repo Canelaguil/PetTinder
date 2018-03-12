@@ -326,6 +326,9 @@ a:hover {
     height: 100%;
     margin: 0 auto;
     padding: 4px 6px !important;
+    background-color: cadetblue;
+    color: white;
+    border-color: black;
 }
 .btn3 {
     background-color: rgb(0, 52, 102) !important;
@@ -352,4 +355,6 @@ a:hover {
 
 .removebutton {
     color: red;
+    background-color: white;
+    border-color: white;
 }
