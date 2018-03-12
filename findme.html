@@ -38,17 +38,23 @@
                     <div class="imgsettings" id="petpic"></div>
                     <h3 class="petname" id ="insert_name" src="">Click the button!</h3>
                     <div class="row">
-                        <div id="favoriteani" class="col buttonbase" style="padding-right: 30px;">
+                        <div id="favoriteani" class="col-sm buttonbase" style="padding-right: 30px;">
                             <button class="btn btn-primary btn4">ADD TO FAVORITES</button>
                         </div>
-                        <div class="col buttonbase"style="">
+                        <div class="col-sm buttonbase" style="">
+                            <select class="form-control form-control-lg box1" width="50%">
+                                <option>Cats</option>
+                                <option>Dogs</option>
+                            </select>
+                        </div>
+                        <div class="col-sm buttonbase" style="">
                             <button id="newanimal" input type="submit" class="btn btn-primary btn4">SHOW ME ANOTHER</button>
                         </div>
-                    </div>
+                        </div>
                 </div>
             </div>
             <div class="col whitebox">
-                <table class="table">
+                <table class="table" id="myTable">
                     <thead>
                         <tr>
                             <th scope="col">Name</th>
@@ -62,32 +68,32 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td scope="row" id="n1">Add pet</td>
-                            <td id="g1">g1</td>
-                            <td id="a1">a1</td>
-                            <td id="s1">s1</td>
-                            <td id="b1">b1</td>
-                            <td id="btn1"><button class="infobutton">Go to profile</button></td>
-                            <td id="r1"><button class="infobutton">Remove</button></td>
+                            <td scope="row" id="n1"></td>
+                            <td id="g1">-</td>
+                            <td id="a1">-</td>
+                            <td id="s1">-</td>
+                            <td id="b1">-</td>
+                            <td id="btn1"><button class="infobutton" onclick="congrats();">Select Favorite</button></td>
+                            <td id="r1"><button class="removebutton" onclick="removeRow(1);">Remove</button></td>
                         </tr>
                         <tr>
-                            <td scope="row" id="n2">Add pet</td>
-                            <td id="g2">g1</td>
-                            <td id="a2">a1</td>
-                            <td id="s2">s1</td>
-                            <td id="b2">b1</td>
-                            <td id="btn2"><button class="infobutton">Go to profile</button></td>
-                            <td id="r2"><button class="infobutton">Remove</button></td>
+                            <td scope="row" id="n2"></td>
+                            <td id="g2">-</td>
+                            <td id="a2">-</td>
+                            <td id="s2">-</td>
+                            <td id="b2">-</td>
+                            <td id="btn2"><button class="infobutton" onclick="congrats();">Select Favorite</button></td>
+                            <td id="r2"><button class="removebutton" onclick="removeRow(2);">Remove</button></td>
 
                         </tr>
                         <tr>
-                            <td scope="row" id="n3">Add pet</td>
-                            <td id="g3">g1</td>
-                            <td id="a3">a1</td>
-                            <td id="s3">s1</td>
-                            <td id="b3">b1</td>
-                            <td id="btn3"><button class="infobutton">Go to profile</button></td>
-                            <td id="r3"><button class="infobutton">Remove</button></td>
+                            <td scope="row" id="n3"></td>
+                            <td id="g3">-</td>
+                            <td id="a3">-</td>
+                            <td id="s3">-</td>
+                            <td id="b3">-</td>
+                            <td id="btn3"><button class="infobutton" onclick="congrats();">Select Favorite</button></td>
+                            <td id="r3"><button class="removebutton" onclick="removeRow(3);">Remove</button></td>
 
                         </tr>
                     </tbody>
@@ -95,6 +101,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+        var index;
+        function removeRow(index) {
+            document.getElementById("myTable").rows[index].cells[0].innerHTML = "";
+            document.getElementById("myTable").rows[index].cells[1].innerHTML = "";
+            document.getElementById("myTable").rows[index].cells[2].innerHTML = "";
+            document.getElementById("myTable").rows[index].cells[3].innerHTML = "";
+            document.getElementById("myTable").rows[index].cells[4].innerHTML = "";
+            return;
+        }
+        function congrats() {
+            alert("Congrats! You've found your petmate!");
+        }
+    </script>
 
     <div class="footer">
         <h6>Powered by Turing Society</h6>

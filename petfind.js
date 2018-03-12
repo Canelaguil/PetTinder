@@ -1,16 +1,27 @@
 $(document).ready(function () {
 
     var apiKey = '8788a1328e6d39c137797752065c325c';
-
+    var index;
     var favName;
     var favSex;
     var favAge;
     var favSize;
     var favBreed;
+    var petkind;
+
+    function getPetKind() {
+        if ($("#box1 option:selected").text() === "Cats") {
+            petkind = 'cat';
+        } else if ($("#box1 option:selected").text() === "Dogs") {
+            petkind = "dog";
+        } else {
+            petkind = 'cat';
+        }
+    }
  
     $("#newanimal").on("click", () => {
         var url = 'http://api.petfinder.com/pet.getRandom';
-        var petkind = 'cat';
+        getPetKind();
         $.ajax({
             url: url,
             jsonp: "callback",
@@ -92,23 +103,6 @@ $(document).ready(function () {
                 favBreed = breed;
 
 
-                /*  var locationName = document.getElementById('petname');
-                locationName.textContent = petName;
-
-
-                var locationSex = document.getElementById('g1');
-                locationSex.textContent = sex;
-
-                var locationAge = document.getElementById('a1');
-                locationAge.textContent = age;
-
-                var locationSize = document.getElementById('s1');
-                locationSize.textContent = size;
-
-                var locationBreed = document.getElementById('b1');
-                locationBreed.textContent = breed; */
-
-
                 document.getElementById('petpic').style.backgroundImage = petpic;
                 document.getElementById('insert_name').innerHTML = petName;
 
@@ -116,17 +110,53 @@ $(document).ready(function () {
             }
 
 
-
         });
 
 
     })
+
+    function isEmpty(str) {
+        return (!str || 0 === str.length);
+    }
+
+    
+
     $("#favoriteani").on("click", () => {
         console.log(favName);
         console.log(favSex);
         console.log(favAge);
         console.log(favSize);
         console.log(favBreed);
- 
+        console.log(document.getElementById("myTable").rows[1].cells[0].innerHTML);
+
+        if (isEmpty(document.getElementById("myTable").rows[1].cells[0].innerHTML)) {
+            document.getElementById("myTable").rows[1].cells[0].innerHTML = favName;
+            document.getElementById("myTable").rows[1].cells[1].innerHTML = favSex;
+            document.getElementById("myTable").rows[1].cells[2].innerHTML = favAge;
+            document.getElementById("myTable").rows[1].cells[3].innerHTML = favSize;
+            document.getElementById("myTable").rows[1].cells[4].innerHTML = favBreed;
+            return;
+        } else if (isEmpty(document.getElementById("myTable").rows[2].cells[0].innerHTML)) {
+            document.getElementById("myTable").rows[2].cells[0].innerHTML = favName;
+            document.getElementById("myTable").rows[2].cells[1].innerHTML = favSex;
+            document.getElementById("myTable").rows[2].cells[2].innerHTML = favAge;
+            document.getElementById("myTable").rows[2].cells[3].innerHTML = favSize;
+            document.getElementById("myTable").rows[2].cells[4].innerHTML = favBreed;
+            return;
+        } else if (isEmpty(document.getElementById("myTable").rows[2].cells[0].innerHTML)) {
+            document.getElementById("myTable").rows[2].cells[0].innerHTML = favName;
+            document.getElementById("myTable").rows[2].cells[1].innerHTML = favSex;
+            document.getElementById("myTable").rows[2].cells[2].innerHTML = favAge;
+            document.getElementById("myTable").rows[2].cells[3].innerHTML = favSize;
+            document.getElementById("myTable").rows[2].cells[4].innerHTML = favBreed;
+            return;
+        } else {
+            alert("Remove an animal before adding new one!")
+        }
     })
+
+    
+    
+
+
 });

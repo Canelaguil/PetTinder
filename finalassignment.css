@@ -349,3 +349,7 @@ a:hover {
     font-family: 'Roboto', sans-serif !important;
    
 }
+
+.removebutton {
+    color: red;
+}
