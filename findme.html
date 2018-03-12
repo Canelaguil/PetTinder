@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Mina|Roboto+Condensed:300i,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karma|Roboto:300" rel="stylesheet">
     <title>Find me a Pet</title>
     <link rel="stylesheet" type="text/css" media="screen" href="finalassignment.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -30,13 +30,25 @@
             </div>
         </nav>
     </div>
-    <div class="textbody">
-        <h1>Title</h1>
-        <h2>Subtitle</h2>
-        <h3>Section Title</h3>
-        <h4>Small Title</h4>
-        <p>Text of the paragraph</p>
-        <button id="checkbtn" type="button" class="btn btn-warning">Click me to check the API</button>
+    <div class="textbody box">
+        <h3>Find your dog</h3>
+    </div>
+
+    <div class="textbody box">
+        <h3>Find your cat</h3>
+
+        <button input type="submit" class="btn btn-primary btn3">FIND ME A(NOTHER) CAT</button>
+
+        <div class="card" style="width: 20rem;">
+            <img class="card-img-top" id ="insert_img">
+            <div class="card-body">
+              <strong>Name:</strong> <p class="card-title" id ="insert_name" src="">Name</p>
+              <strong>Sex:</strong> <p class="card-text" id ="gender" >Sex</p>
+              <strong>Age:</strong> <p class="card-text" id ="age">Age</p>
+              <strong>Size:</strong> <p class="card-text" id ="size">Size</p>
+              <strong>Breed:</strong> <p class="card-text" id ="breed">Breed</p>
+            </div>
+          </div>
     </div>
 
     <div class="footer">
@@ -49,5 +61,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
     <script src="finalassignment.js"></script>
+    <script src="petfind.js"></script>
 </body>
 </html>
