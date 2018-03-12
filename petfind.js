@@ -1,9 +1,12 @@
 $(function () {
- 
-var apiKey = '8788a1328e6d39c137797752065c325c';
-console.log("grsgsg");
 
-    $(".btn4").on("click", () => {
+    var apiKey = '8788a1328e6d39c137797752065c325c';
+    console.log("grsgsg");
+    var favName;
+    var favSex;
+    var favBreed;
+    var fav
+    $("#newanimal").on("click", () => {
         var url = 'http://api.petfinder.com/pet.getRandom';
         var petkind = 'cat';
         $.ajax({
@@ -23,7 +26,11 @@ console.log("grsgsg");
 
             success: function (response) {
 
-                var catName = response.petfinder.pet.name.$t;
+                console.log(response);
+
+                var petName = response.petfinder.pet.name.$t;
+                console.log(petName);
+
                 var img = response.petfinder.pet.media.photos.photo[2].$t;
 
                 var size = response.petfinder.pet.size.$t;
@@ -65,49 +72,38 @@ console.log("grsgsg");
                     breed = "Not specified";
                 }
 
+                var locationName = document.getElementById("petname");
+                locationName.textContent = petName;
 
+                var locationSex = document.getElementById('g1');
+                locationSex.textContent = sex;
 
-                var newName = document.getElementById("n1");
-                newName.textContent = catName;
+                var locationAge = document.getElementById('a1');
+                locationAge.textContent = age;
 
+                var locationSize = document.getElementById('s1');
+                locationSize.textContent = size;
 
-                var newSex = document.getElementById('g1');
-                newSex.textContent = sex;
-
-                var newAge = document.getElementById('a1');
-                newAge.textContent = age;
-
-                var newSize = document.getElementById('s1');
-                newSize.textContent = size;
-
-                var newBreed = document.getElementById('b1');
-                newBreed.textContent = breed;
+                var locationBreed = document.getElementById('b1');
+                locationBreed.textContent = breed;
 
 
                 var petpic = "url(" + img + ")";
                 document.getElementById('petpic').style.backgroundImage = petpic;
-                newName.appendChild(newName);
-                newSex.appendChild(newSex);
-                newAge.appendChild(newAge);
-                newSize.appendChild(newSize);
-                newBreed.appendChild(newBreed);
-     
+                locationName2.appendChild(petName);
+                locationName.appendChild(petName);
+                locationSex.appendChild(sex);
+                locationAge.appendChild(age);
+                locationSize.appendChild(size);
+                locationBreed.appendChild(breed);
+
 
             }
 
+
+
         });
+
+
     })
-
-  /*  function bindButtons() {
-      
-        document.addEventListener('click', function (event) {
-        event.preventDefault();
-       
-
-        
-       
-    })
-
-   }
-    */
 })
